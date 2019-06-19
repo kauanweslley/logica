@@ -185,7 +185,8 @@ def palindrome(texto):
 def troca_caixa(texto):
     """Vogais ficam em caixa alta (maiúsculas)
     Consoantes ficam em caixa baixa (minúsculas)""" 
-    
+    texto = texto.replace('a', 'A').replace('e', 'E').replace('i', 'I').replace('o','O').replace('u','U').replace('S','s').replace('C',"c")
+    return texto
 
 def imprime_mes_por_extenso(data):
     """Faça um programa que solicite a data de nascimento (dd/mm/aaaa)
@@ -218,7 +219,7 @@ def imprime_mes_por_extenso(data):
 def encontra_caracter(texto, caracter_procurado):
     """Receba um texto e retorne a localização da primeira vez que
     aparece o caracter especificado"""
-
+    return (caracter_procurado in texto)
 
 def é_azarado(numero):
     
@@ -253,7 +254,7 @@ def media_saltos_lista(saltos):
 
 def contem(lista, item_procurado):
     """Verifica se uma lista contém um item e devolve um valor booleano."""
-    return (item_procurado in lista )
+    return (item_procurado in lista)
 
 def conta(lista, item_procurado):
     """Informa quantas ocorrências de um item existem numa lista."""
