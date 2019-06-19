@@ -115,7 +115,6 @@ def media_final_aprovado_reprovado(p1, p2, ep1, ep2):
 def salario(valor_hora, horas_mensais):
     """ Recebe quanto ganha por hora e quantas horas trabalho ao mês,
     e retorna o salário líquido.
-
     Descontos:
     - INSS é 8% do salário bruto
     - IR é 11% do salário bruto
@@ -227,8 +226,7 @@ def é_azarado(numero):
 
 def ondernamento_contrario(lista):
     """ Devolve a lista invertida"""
-    ondernamento_contrario = lista.reverse()
-    return ondernamento_contrario
+
 
 def maximo(lista):
     """ Calcule o maior número da 'lista' """
@@ -248,18 +246,18 @@ def maior_menor(lista):
 
 def media_saltos_lista(saltos):
     """Receba uma lista com os saltos de um atleta e calcule a média
-
     dos seus saltos, sabendo que o melhor e o pior saltos são desconsiderados.
     """
+    return sum(saltos) / len(saltos)
 
 
 def contem(lista, item_procurado):
     """Verifica se uma lista contém um item e devolve um valor booleano."""
-
+    return (item_procurado in lista )
 
 def conta(lista, item_procurado):
     """Informa quantas ocorrências de um item existem numa lista."""
-    len(lista)
+    return lista.count(item_procurado)
     
 
 def mes_extenso(mes):
@@ -271,14 +269,16 @@ def mes_extenso(mes):
 def media_temperaturas(temperaturas):
     """Devolva a média das temperaturas.
     """
-
+    return sum(temperaturas) / len(temperaturas)
 
 def leet(texto):
     '''
     Converte texto em leet
     troca = {'a':'4','e':'3','g':'9','i':'1','s':'5','t':'7','o':'0'}
     '''
-    
+    text = texto.replace('O', '0').replace('E', '3').replace('T', '7').replace('a', '4').replace('e', '3').replace('g', '9').replace('i', '1').replace('s', '5').replace('t', '7').replace('o', '0')
+
+    return text
    
 
 def apaga(s, n):
@@ -288,6 +288,7 @@ def apaga(s, n):
     apaga('kitten', 1) -> 'ktten'
     apaga('kitten', 4) -> 'kittn'
     """
+    return s[0:n] + s[n + 1:]
 
 
 # Área de testes: só mexa aqui se souber o que está fazendo!
