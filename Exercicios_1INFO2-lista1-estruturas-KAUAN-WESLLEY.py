@@ -227,7 +227,8 @@ def é_azarado(numero):
 
 def ondernamento_contrario(lista):
     """ Devolve a lista invertida"""
-
+    lista.reverse()
+    return lista
 
 def maximo(lista):
     """ Calcule o maior número da 'lista' """
