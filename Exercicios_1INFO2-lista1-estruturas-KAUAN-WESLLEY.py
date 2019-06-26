@@ -266,7 +266,8 @@ def mes_extenso(mes):
     """Receba um número correspondente ao mês e devolva o nome do mês,
     com 3 letras. Ex.: 1-jan, 2-fev, ..., 12-dez.
     Use uma lista com os nomes dos meses."""
-1: 'jan',
+    meses_extenso = {
+    1: 'jan',
     2: 'fev',
     3: 'mar',
     4: 'abr',
