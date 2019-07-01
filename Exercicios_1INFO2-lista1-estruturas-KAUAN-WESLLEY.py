@@ -266,26 +266,10 @@ def mes_extenso(mes):
     """Receba um número correspondente ao mês e devolva o nome do mês,
     com 3 letras. Ex.: 1-jan, 2-fev, ..., 12-dez.
     Use uma lista com os nomes dos meses."""
-    meses_extenso = {
-    1: 'jan',
-    2: 'fev',
-    3: 'mar',
-    4: 'abr',
-    5: 'maio',
-    6: 'jun',
-    7: 'jul',
-    8: 'ago',
-    9: 'set',
-    10: 'out',
-    11: 'nov',
-    12: 'dez',
-}
-    mes = mes_extenso[1] 
-    mes1 = mes_extenso[2]
-    mes2 = mes_extenso[12]
-    return mes 
-    return mes1 
-    return mes2
+    mes_extenso = ['jan', 'fev', 'mar', 'abr', 'maio', 'jun', 'jul', 'ago', 'set', 'out',
+     'nov', 'dez']
+    nome_do_mes = mes_extenso[mes - 1]
+    return nome_do_mes
 
 
 def media_temperaturas(temperaturas):
