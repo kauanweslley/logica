@@ -219,7 +219,8 @@ def imprime_mes_por_extenso(data):
 def encontra_caracter(texto, caracter_procurado):
     """Receba um texto e retorne a localização da primeira vez que
     aparece o caracter especificado"""
-    return (caracter_procurado in texto)
+    a = texto.find(caracter_procurado,0)
+    return a
 
 def é_azarado(numero):
     
@@ -253,7 +254,9 @@ def media_saltos_lista(saltos):
     """Receba uma lista com os saltos de um atleta e calcule a média
     dos seus saltos, sabendo que o melhor e o pior saltos são desconsiderados.
     """
-    return sum(saltos) / len(saltos)
+    a = sum(saltos) / len(saltos)
+    return round (a, 1)
+
 
 
 def contem(lista, item_procurado):
