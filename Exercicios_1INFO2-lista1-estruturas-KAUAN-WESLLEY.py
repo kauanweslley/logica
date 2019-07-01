@@ -224,6 +224,9 @@ def encontra_caracter(texto, caracter_procurado):
 def é_azarado(numero):
     
     """O último dígito não pode ser igual ao primeiro, porque isso dá azar."""
+    a = numero[0]
+    b = numero[-1]
+    return a == b
 
 def ondernamento_contrario(lista):
     """ Devolve a lista invertida"""
