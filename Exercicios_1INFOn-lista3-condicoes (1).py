@@ -17,7 +17,10 @@ def testa_lados(a,b,c):
  
 def ano_bissexto(ano):
     ''' Determine se um ano é bissexto'''
-
+    if ano / 4 :
+         return True
+    else :
+        return False
 
 def data_valida(data):
     '''Valida data. Recebe uma string no formato dd/mm/aaaa e informa
