@@ -17,11 +17,10 @@ def testa_lados(a,b,c):
  
 def ano_bissexto(ano):
     ''' Determine se um ano é bissexto'''
-    if ano / 4 :
+    if (ano % 4 == 0 and ano % 100 !=0) or ano % 400 == 0:
          return True
     else :
         return False
-
 def data_valida(data):
     '''Valida data. Recebe uma string no formato dd/mm/aaaa e informa
     um valor lógico indicando se a data é válida ou não.'''
@@ -29,11 +28,21 @@ def data_valida(data):
 
 def maior3(a,b,c):
     ''' Recebe tres valores, e retorna o maior dos tres'''
-
+    if a > b and a > c:
+        return a
+    elif b > a and b > c:
+        return b
+    else:
+        return c
 
 def menor3(a,b,c):
     ''' Recebe tres valores, e retorna o menor dos tres'''
-
+    if a < b and a < c:
+        return a
+    elif b < a and b < c:
+        return b
+    else:
+        return 
 
 def baskara(a,b,c):
     '''Calcule as raízes de uma equação do segundo grau, na forma 
