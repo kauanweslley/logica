@@ -29,21 +29,17 @@ def data_valida(data):
     ano = data.split('/')[2]
     dia = int(dia)
     mes = int(mes)
-    ano= int(ano)
-
-    if mes == 1 or mes == 3 or mes == 5 or mes == 7 or mes == 9 or mes == 11:
-        if dia <= 31:
+    ano = int(ano)
+    if (ano > 0) and (dia > 0):
+        if mes in (1, 3, 5, 7, 8, 10, 12) and (dia <= 31):
             return True
-
-    elif mes == 4 or mes == 6 or mes == 8 or mes == 10 or mes == 12:
-        if dia <= 30:
+        elif mes in (4, 6, 9, 11) and (dia <= 30):
             return True
-
-    elif ano % 4 == 0 and mes == 2:
-        if dia <= 28:
+        elif (mes == 2) and ano_bissexto(ano) and (dia <= 29):
             return True
-    else: 
-        return False
+        elif (mes == 2) and (dia <= 28):
+            return True
+    return False  
 
 def maior3(a,b,c):
     ''' Recebe tres valores, e retorna o maior dos tres'''
