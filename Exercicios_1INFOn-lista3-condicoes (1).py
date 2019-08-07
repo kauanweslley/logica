@@ -24,7 +24,26 @@ def ano_bissexto(ano):
 def data_valida(data):
     '''Valida data. Recebe uma string no formato dd/mm/aaaa e informa
     um valor lógico indicando se a data é válida ou não.'''
+    dia = data.split('/')[0]
+    mes = data.split('/')[1]
+    ano = data.split('/')[2]
+    dia = int(dia)
+    mes = int(mes)
+    ano= int(ano)
 
+    if mes == 1 or mes == 3 or mes == 5 or mes == 7 or mes == 9 or mes == 11:
+        if dia <= 31:
+            return True
+
+    elif mes == 4 or mes == 6 or mes == 8 or mes == 10 or mes == 12:
+        if dia <= 30:
+            return True
+
+    elif ano % 4 == 0 and mes == 2:
+        if dia <= 28:
+            return True
+    else: 
+        return False
 
 def maior3(a,b,c):
     ''' Recebe tres valores, e retorna o maior dos tres'''
@@ -63,7 +82,12 @@ def acrescimo_nota_bb(nota_sozinho,nota_com_ajuda):
     depois que o big brother ajudou, e retorna o acrecimo que o big
      brother recebera em sua nota pela ajuda.
      O acréscimo é de 1/4 da diferença das notas, se for positivo'''
-
+    soma = nota_com_ajuda - nota_sozinho
+    acrescimo = soma * (1/4)
+    if acrescimo > 0:
+        return round(acrescimo, 1)
+    else:
+        return round(acrescimo)
 
 # Área de testes: só mexa aqui se souber o que está fazendo!
 acertos = 0
