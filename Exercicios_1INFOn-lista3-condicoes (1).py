@@ -76,6 +76,16 @@ def baskara(a,b,c):
     - Se o delta for positivo, a equação possui duas raiz reais.
     Devolva uma tupla com dois elementos.
     '''
+    delta = b **  2 - 4 * a * c
+    baskara = (-b +- (delta ** 0.5)) / 2 * a
+   
+    if a == 0:
+        return False
+    if delta < 0:
+        return ()
+    elif delta == 0:
+        return baskara
+    
 
 def acrescimo_nota_bb(nota_sozinho,nota_com_ajuda):
     ''' Recebe a nota do litle brother antes de receber ajuda, e a nota
