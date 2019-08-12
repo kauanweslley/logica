@@ -57,7 +57,7 @@ def menor3(a,b,c):
     elif b < a and b < c:
         return b
     else:
-        return 
+        return c
 
 def baskara(a,b,c):
     '''Calcule as raízes de uma equação do segundo grau, na forma 
@@ -72,15 +72,18 @@ def baskara(a,b,c):
     - Se o delta for positivo, a equação possui duas raiz reais.
     Devolva uma tupla com dois elementos.
     '''
-    delta = b **  2 - 4 * a * c
-    baskara = (-b +- (delta ** 0.5)) / 2 * a
-   
     if a == 0:
-        return False
-    if delta < 0:
-        return ()
-    elif delta == 0:
-        return baskara
+        return (-c / b, )
+    else:
+        delta = (b **  2) - (4 * a * c)
+        x1 = (-b + (delta ** 0.5)) / (2 * a) 
+        x2 = (-b - (delta ** 0.5)) / (2 * a)
+        if (delta < 0):
+            return ()
+        elif delta == 0:
+            return (x1,)
+        else:
+            return (x1,x2)
     
 
 def acrescimo_nota_bb(nota_sozinho,nota_com_ajuda):
