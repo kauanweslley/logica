@@ -64,38 +64,41 @@ def intercalamento_listas(lista1, lista2):
 
 def im_pares(lista):
     """ Separe em listas os impares e pares, dos inteiros da 'lista' """
-    listapar = []
-    listaimpar = []
+    pares = []
+    impares = []
     for lugar in lista:
         if lugar % 2 == 0:
-            listapar.append(lugar)
+            pares.append(lugar)
         else:
-            listaimpar.append(lugar)
-    return listapar, listaimpar
+            impares.append(lugar)
+    return pares, impares
 
 
 def maior_menor(lista):
     """ Calcule o maior e o menor numero da 'lista' """
-    for item in lista:
-        lista1 = []
-        lista2 = []
-        for numero in range(len(lista)):
-            if item >= lista[numero]:
-                lista1.append(item)
-            if len(lista) == len(lista1):
-                maior = item
-            if item <= lista[numero]:
-                lista2.append(item)
-            if len(lista) == len(lista2):
-                menor = item
+    menor = lista[0]
+    maior = lista[0]
+    for numero in lista:
+        if numero < menor:
+            menor = numero
+        if numero > maior:
+            maior = numero
     return maior, menor
-
 
 def dar_troco(valor_a_pagar, valor_em_dinheiro):
     """ Calcule o troco numa lista com notas de 1,2,5,10,20,50 com sua
     quantidade de notas sem considerar centavos
     ex:
     1 e 10 retorna troco_notas_quantidade = [5,2] quantidade_notas = [1,2]"""
+        notas = (50, 20, 10, 5, 2, 1)
+    valor_troco = valor_em_dinheiro - valor_a_pagar
+    troco = []
+    for nota in notas:
+        quantidade = valor_troco // nota
+        valor_troco = valor_troco % nota
+        if quantidade != 0:
+            troco.append((nota, quantidade))
+    return troco
 
 
 def media_anual(temperaturas):
@@ -245,6 +248,13 @@ def main():
     print(' Lista Intercalada:')
     test(intercalamento_listas(lista5, lista6),
          [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    lista = []
+    for item in range(1, valor + 1):
+        if valor % item == 0:
+            lista.append(item)
+        if len(lista) > 2:
+            return False
+    return True
 
     print(' Lista de pares e impares:')
     test(im_pares(lista1), ([2, 4, 6, 8, 10], [1, 3, 5, 7, 9]))
