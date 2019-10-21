@@ -1,33 +1,35 @@
 # Lista de exercícios 5 - repetição com while
 
+
 def quantidade_de_impares(valor_inicial, valor_final):
     ''' Determine a quantidade de números ímpares num intervalo'''
-    contador = 0
+    contador_de_impares = 0
     numero = valor_inicial + 1
     while numero < valor_final:
         if numero % 2 == 1:
-            contador = contador + 1
+            contador_de_impares = contador_de_impares + 1
         numero = numero + 1
-    return contador
+    return contador_de_impares
+
 
 def soma_dos_inteiros(valor1, valor2):
     ''' Calcule a soma dos números inteiros no intervalo entre 'valor1'
     e o 'valor2' ou vice-versa, considerando que podem ser informado
-    números negativos ou fora de ordem. 
+    números negativos ou fora de ordem.
     Ex: 1 e 5 ou 5 e 1, retorna 9'''
     soma = 0
     if valor1 > valor2:
         valor1, valor2 = valor2, valor1
-    numero = valor1 + 1 
+    numero = valor1 + 1
     while numero < valor2:
         soma = soma + numero
         numero = numero + 1
     return soma
 
+
 def potencia(base, expoente):
-    ''' Calcule a 'base' elevada ao 'expoente' manualmente sem usar 
+    ''' Calcule a 'base' elevada ao 'expoente' manualmente sem usar
     'base**expoente'. Considere base e expoente como inteiros positivos.'''
-    # 2^5 = 2 * 2 * 2 * 2 * 2 
     contador = 1
     resultado = 1
     while contador <= expoente:
@@ -35,14 +37,15 @@ def potencia(base, expoente):
         contador = contador + 1
     return resultado
 
+
 def crescimento_populacional(populacao1, populacao2, crescimento1,
                              crescimento2):
-    ''' Calcule quantos anos levará para a 'população1' ultrapassar a 
-    'população2', baseado em suas porcentagens de crescimento.'''
-    contador = 0 
+    ''' Calcule quantos anos levará para a 'população1'
+    ultrapassar a 'população2', baseado em suas porcentagens de crescimento.'''
+    contador = 0
     if populacao1 < populacao2 and crescimento1 > crescimento2:
         while populacao1 < populacao2:
-            populacao1 = populacao1 + (populacao1 * (crescimento1 / 100 ))
+            populacao1 = populacao1 + (populacao1 * (crescimento1 / 100))
             populacao2 = populacao2 + (populacao2 * (crescimento2 / 100))
             contador = contador + 1
     return contador
@@ -51,20 +54,24 @@ def crescimento_populacional(populacao1, populacao2, crescimento1,
 def Fibonacci(n):
     ''' Retorne o n-ésimo valor da série de Fibonacci
     Fibonacci = 1,1,2,3,5,8,13,...'''
-    a = 1
-    b = 0
+    anterior = 1
+    soma = 0
     contador = 0
     while contador < n:
-        soma = a + b
-        a = b
-        b = soma
+        anterior, soma = soma, soma + anterior
         contador = contador + 1
-    return b
+    return soma
+
 
 def fatorial(numero):
     ''' Calcule e retorne o fatorial do 'numero' informado,
     O fatorial é o valor produtório dos valores menores ou iguais ao número
     ex: fatorial de 4 é 4*3*2*1 e retorna 24'''
+    fatorial = 1
+    while numero > 1:
+        fatorial = fatorial * numero
+        numero = numero - 1
+    return fatorial
 
 
 def é_primo(valor):
@@ -218,7 +225,8 @@ def main():
 
 if __name__ == '__main__':
     main()
-    print("\n%d Testes, %d Ok, %d Falhas: Nota %.1f" % (total, acertos,
-                                                        total-acertos, float(acertos*10)/total))
+    print("\n%d Testes, %d Ok, %d Falhas: Nota %.1f" % (
+        total, acertos, total - acertos, float(acertos * 10) / total)
+    )
     if total == acertos:
         print("Parabéns, seu programa rodou sem falhas!")
