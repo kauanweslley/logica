@@ -1,0 +1,85 @@
+body {
+    background: linear-gradient(to right, rgb(7, 118, 182), rgb(169, 236, 163));
+    height: 100vh;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#quiz {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#quiz h1 {
+    font-weight: 600;
+    font-size: 4rem;
+}
+
+.question {
+    background-color: snow;
+    color: #000;
+    font-size: 2.5rem;
+    height: 400px;
+    width: 70%;
+    border-radius: 30px;
+}
+ul.answers {
+    font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.answers li {
+    margin: 20px;
+    display: flex;
+    background-color: steelblue;
+    width: 40%;
+    align-self: center;
+    border-radius: 8.5px;
+}
+
+.answers .number {
+    background-color: rgb(3, 71, 117);
+    color: #fff;
+    padding: 10px;
+    /*border-radius: 8px; */
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    flex-basis: 30px;
+}
+.answers .text {
+    align-self: center;
+    flex: 0.75;
+}
+
+.result{
+    background-color: lightskyblue;
+    color: rgb(35, 46, 58);
+    height: 400px;
+    width: 70%;
+    border-radius: 25px;
+    font-size: 4rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result button{
+    align-self: center;
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    color: rgba(3, 27, 59, 0.781);
+    background-color: linen;
+    font-weight: 600;
+    border-radius: 8px;
+}
+.result.wrong{
+    color: white;
+    background-color: rgba(182, 10, 10, 0.589);
+}
+.result.wrong button{
+    color: rgba(145, 5, 5, 0.699);
+}
